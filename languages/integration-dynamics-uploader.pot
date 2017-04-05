@@ -1,0 +1,62 @@
+# Copyright (C) 2017 Dynamics CRM Integration Uploader
+# This file is distributed under the same license as the Dynamics CRM Integration Uploader package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dynamics CRM Integration Uploader 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/integration-"
+"dynamics-uploader\n"
+"POT-Creation-Date: 2017-04-05 17:26:23+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: src/Uploader.php:42
+msgid "Images can be uploaded after the record is saved!"
+msgstr ""
+
+#: src/Uploader.php:93
+msgid "Unable to get the specified SavedQuery [%1$s] for the entity {%2$s}"
+msgstr ""
+
+#: templates/uploader/gallery.php:51 templates/uploader/gallery.php:83
+msgid "Remove"
+msgstr ""
+
+#: templates/uploader/gallery.php:89
+msgid "Click here to select files or drag and drop files here to upload"
+msgstr ""
+
+#: templates/uploader/gallery.php:90
+msgid "\"%s\" is being uploaded..."
+msgstr ""
+
+#: templates/uploader/gallery.php:90
+msgid "Uploading..."
+msgstr ""
+
+#: templates/uploader/gallery.php:106
+msgid "Failed to remove the image."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Dynamics CRM Integration Uploader"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://alexacrm.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Image uploader for Dynamics CRM Integration."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "AlexaCRM"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://alexacrm.com"
+msgstr ""
