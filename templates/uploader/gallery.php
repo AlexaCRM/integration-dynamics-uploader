@@ -7,6 +7,9 @@
 
 ?>
 <style>
+    .dz-error .wpcrm-uploader-spinner {
+        display: none;
+    }
     .wpcrm-media-gallery {
         display: block;
         list-style: none;
@@ -73,11 +76,29 @@
             } );
 
             Dropzone.options.wpcrmUploader = {
+                accept: function( file, done ) {
+                    if ( file.type !== 'image/jpeg' && file.type !== 'image/png' ) {
+                        done( '<?php echo esc_js( __( 'Only JPG and PNG files are accepted.', 'integration-dynamics-uploader' ) ); ?>' );
+                    }
+
+                    var img = new Image(), isError = false;
+                    img.onload = function() {
+                        if ( this.width <= this.height ) {
+                            done( '<?php echo esc_js( __( 'Only landscape images are accepted.', 'integration-dynamics-uploader' ) ); ?>' );
+                            isError = true;
+                            return;
+                        }
+
+                        done();
+                    };
+                    img.src = URL.createObjectURL( file );
+                },
                 init: function() {
                     var dz = this;
 
                     dz.on( 'complete', function( file ) {
                         if ( file.status === 'error' ) {
+                            return;
                             dz.removeFile( file );
                             alert( file.name + ' - <?php echo esc_js( __( 'File size must not exceed 4 megabytes.', 'integration-dynamics-uploader' ) ); ?>' );
                             return;
@@ -94,7 +115,7 @@
                 },
                 maxFilesize: 4, // CRM limit if 4MB
                 dictDefaultMessage: '<?php echo esc_js( __( 'Click here to select files or drag and drop files here to upload', 'integration-dynamics-uploader' ) ); ?>',
-                previewTemplate: '<div><?php echo sprintf( __( '"%s" is being uploaded...', 'integration-dynamics-uploader' ), '<span data-dz-name></span>' ); ?> <img src="<?php echo esc_attr( plugins_url( 'integration-dynamics/resources/front/images/progress.gif' ) ); ?>" width="18" height="18" alt="<?php echo esc_js( __( 'Uploading...', 'integration-dynamics-uploader' ) ); ?>"></div>'
+                previewTemplate: '<div><?php echo sprintf( __( '"%s" is being uploaded...', 'integration-dynamics-uploader' ), '<span data-dz-name></span>' ); ?> <img class="wpcrm-uploader-spinner" src="<?php echo esc_attr( plugins_url( 'integration-dynamics/resources/front/images/progress.gif' ) ); ?>" width="18" height="18" alt="<?php echo esc_js( __( 'Uploading...', 'integration-dynamics-uploader' ) ); ?>"> <span data-dz-errormessage></span></div>'
             };
 
             $body.on( 'click', '.wpcrm-media-gallery .wpcrm-remove', function() {
