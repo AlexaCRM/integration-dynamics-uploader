@@ -3,7 +3,7 @@
  * Plugin Name: Dynamics CRM Integration Uploader
  * Plugin URI: https://alexacrm.com/
  * Description: Image uploader for Dynamics CRM Integration.
- * Version: 1.0
+ * Version: 1.1
  * Author: AlexaCRM
  * Author URI: https://alexacrm.com
  * Text Domain: integration-dynamics-uploader

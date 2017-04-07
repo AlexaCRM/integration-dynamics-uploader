@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Dynamics CRM Integration Uploader package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dynamics CRM Integration Uploader 1.0\n"
+"Project-Id-Version: Dynamics CRM Integration Uploader 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/integration-"
 "dynamics-uploader\n"
-"POT-Creation-Date: 2017-04-05 17:26:23+00:00\n"
+"POT-Creation-Date: 2017-04-07 11:16:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,23 +21,35 @@ msgstr ""
 msgid "Unable to get the specified SavedQuery [%1$s] for the entity {%2$s}"
 msgstr ""
 
-#: templates/uploader/gallery.php:51 templates/uploader/gallery.php:83
+#: templates/uploader/gallery.php:54 templates/uploader/gallery.php:110
 msgid "Remove"
 msgstr ""
 
-#: templates/uploader/gallery.php:89
+#: templates/uploader/gallery.php:81
+msgid "Only JPG and PNG files are accepted."
+msgstr ""
+
+#: templates/uploader/gallery.php:87
+msgid "Only landscape images are accepted."
+msgstr ""
+
+#: templates/uploader/gallery.php:103
+msgid "File size must not exceed 4 megabytes."
+msgstr ""
+
+#: templates/uploader/gallery.php:117
 msgid "Click here to select files or drag and drop files here to upload"
 msgstr ""
 
-#: templates/uploader/gallery.php:90
+#: templates/uploader/gallery.php:118
 msgid "\"%s\" is being uploaded..."
 msgstr ""
 
-#: templates/uploader/gallery.php:90
+#: templates/uploader/gallery.php:118
 msgid "Uploading..."
 msgstr ""
 
-#: templates/uploader/gallery.php:106
+#: templates/uploader/gallery.php:134
 msgid "Failed to remove the image."
 msgstr ""
 
