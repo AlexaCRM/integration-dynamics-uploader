@@ -77,6 +77,12 @@
                     var dz = this;
 
                     dz.on( 'complete', function( file ) {
+                        if ( file.status === 'error' ) {
+                            dz.removeFile( file );
+                            alert( file.name + ' - <?php echo esc_js( __( 'File size must not exceed 4 megabytes.', 'integration-dynamics-uploader' ) ); ?>' );
+                            return;
+                        }
+
                         var imageId = file.xhr.response, $el;
                         dz.removeFile( file );
 
@@ -86,6 +92,7 @@
                         } );
                     } );
                 },
+                maxFilesize: 4, // CRM limit if 4MB
                 dictDefaultMessage: '<?php echo esc_js( __( 'Click here to select files or drag and drop files here to upload', 'integration-dynamics-uploader' ) ); ?>',
                 previewTemplate: '<div><?php echo sprintf( __( '"%s" is being uploaded...', 'integration-dynamics-uploader' ), '<span data-dz-name></span>' ); ?> <img src="<?php echo esc_attr( plugins_url( 'integration-dynamics/resources/front/images/progress.gif' ) ); ?>" width="18" height="18" alt="<?php echo esc_js( __( 'Uploading...', 'integration-dynamics-uploader' ) ); ?>"></div>'
             };
